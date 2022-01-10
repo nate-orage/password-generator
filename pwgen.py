@@ -7,6 +7,7 @@ from typing import Counter, final, no_type_check
 import secrets
 import string
 
+
 def pw_gen(x):
     prompt = "\nHow many characters should your password consist of? Please enter a value of 8 or more: "
     error = "\nPlease enter a whole number. Decimals and letters are not allowed. "
@@ -21,12 +22,16 @@ def pw_gen(x):
             return pw_gen(x)
         elif int(x) >= 8:
             x = int(x)
-            password = ''.join(secrets.choice(combined) for i in range(x))
-            print(f'Your password is:\n{password}\nYour password consists of {x} characters. Please keep it safe.')
+            password = "".join(secrets.choice(combined) for i in range(x))
+            print(
+                f"Your password is:\n{password}\nYour password consists of {x} characters. Please keep it safe."
+            )
         elif int(x) < 8:
             return pw_gen(x)
     except ValueError:
         if type(x) == str:
             return pw_gen(x)
-x = ''
+
+
+x = ""
 pw_gen(x)
