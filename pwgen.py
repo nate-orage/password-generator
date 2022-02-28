@@ -17,6 +17,7 @@ def pw_gen(x):
     num = string.digits
     symbols = string.punctuation
     combined = lowercase + uppercase + num + symbols
+    # Input Validation
     try:
         if type(x) == float:
             return pw_gen(x)
